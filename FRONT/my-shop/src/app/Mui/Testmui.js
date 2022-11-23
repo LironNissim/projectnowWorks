@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useSelector, useDispatch } from 'react-redux'
-import { selectorders, sendOrderAsync } from './orderSlice'
+import { selectorders, sendOrderAsync } from '../MySlicers/orderSlice'
 
 
 
@@ -22,7 +22,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function CustomizedBadges() {
   const myorders = useSelector(selectorders);
   return (
-    <IconButton aria-label="cart">
+    <IconButton aria-label="cart" color='white'>
       <StyledBadge badgeContent={myorders && myorders.length} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>

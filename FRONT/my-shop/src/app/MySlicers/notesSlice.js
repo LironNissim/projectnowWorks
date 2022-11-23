@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { signin } from './loginAPI';
+import { signin } from '../MyAPI/loginAPI';
 import jwt_decode from "jwt-decode";
-import {getNotes} from './notesApi'
+import {getNotes} from '../MyAPI/notesApi'
 import {selectToken} from './loginSlice';
 
 const initialState = {

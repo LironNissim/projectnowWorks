@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux';
-import { selectUserName } from './loginSlice';
-import { getProdAsync, selectProducts } from './productsSlice';
-import { selectCats } from './catSlice';
-import { sendCart } from './orderSlice';
+import { selectUserName } from '../MySlicers/loginSlice';
+import { getProdAsync, selectProducts } from '../MySlicers/productsSlice';
+import { sendCart } from '../MySlicers/orderSlice';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 // import { IconButton } from '@mui/material';
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
@@ -16,13 +15,13 @@ import Card from '@mui/joy/Card';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Favorite from '@mui/icons-material/Favorite';
+import { color } from '@mui/system';
 
 const Products = () => {
   let params = useParams();
   let id = params.id;
   const userName = useSelector(selectUserName);
   const allProducts = useSelector(selectProducts);
-  const categories = useSelector(selectCats);
   const dispatch = useDispatch();
   const [image, setImage] = useState(null);
   const [myCart, setmyCart] = useState([])
@@ -75,18 +74,23 @@ const Products = () => {
   return (
     <div>
       {/* <h4>{userName && <div>Hello{userName}</div>}</h4>  */}
-      <h3>Products</h3>
+      <div style={{textAlign:"center"}} >
+          <h3 >NEW HOLIDAY COLLECTION</h3>
+          <h5>By the Italian Designer Paw-la Perro</h5>
+      </div>
+      
       <IconButton onClick={() => setmyCart([])} size="small">Clear Cart<RemoveShoppingCartIcon />
       </IconButton>
       {/* <IconButton onClick={() => console.table(myCart)} size="small">Show Cart<ShoppingCartIcon/>
       </IconButton> */}
       <IconButton onClick={() => dispatch(sendCart(myCart))} size="small">Send Order<ShoppingCartCheckoutIcon />
       </IconButton>
+     
       {/* <button onClick={()=>dispatch(clearAr())}>Test</button> */}
 
       {/* {id === 0 && 'ALL'}{id > 0 && categories[id-1].desc} */}
       {allProducts.map((prod, i) => <div key={i}>
-        <Card className='MyCard' variant="outlined" sx={{ width: 400 }}>
+        <Card className='MyCard' variant="outlined" sx={{ width: 300 }}>
           <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
             <h3>{prod.desc}</h3>
           </Typography>
@@ -99,7 +103,7 @@ const Products = () => {
             sx={{ position: 'absolute', top: '0.5rem', right: '0.5rem' }}>
             <Favorite />
           </IconButton>
-          <AspectRatio minHeight="300px" maxHeight="100px" sx={{ my: 2 }}>
+          <AspectRatio minHeight="300px" maxHeight="300px" sx={{ my: 2 }}>
             <img
               src={`http://127.0.0.1:8000/media/${prod.image}`} width="400" height="400"
               //   srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"

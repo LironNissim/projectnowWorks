@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { selectToken } from './loginSlice';
-import {selectProducts,getProdAsync, addProdAsync, updProdAsync, removeProdAsync} from './productsSlice';
+import { selectToken } from '../MySlicers/loginSlice';
+import {selectProducts,getProdAsync, addProdAsync, updProdAsync, removeProdAsync} from '../MySlicers/productsSlice';
 import {useSelector, useDispatch} from 'react-redux';
-import {API_URL, URL, IMAGES_URL} from './constants/imgU';
+import {API_URL, URL, IMAGES_URL} from '../constants/imgU';
 import { Outlet,NavLink} from 'react-router-dom';
-import { selectCats, getcatAsync } from './catSlice';
 import DeleteIcon from '@mui/icons-material/Delete';
 import PetsIcon from '@mui/icons-material/Pets';
 import AspectRatio from '@mui/joy/AspectRatio';
@@ -29,7 +28,7 @@ const AppOld = () => {
   const dispatch = useDispatch();
 
 useEffect(()=>{
-  dispatch(getProdAsync())
+  dispatch(getProdAsync(products))
 },[products.length])
 // console.log("products", products)
 
@@ -73,15 +72,13 @@ useEffect(()=>{
     form_data.append("desc", desc);
     form_data.append("content", content);
     form_data.append("price", price);
-
+    
     dispatch(addProdAsync({token:token, form_data:form_data}))
 
     setDesc("");
     setImage(null);
     setContent("");
     setPrice("");
-
-  
   };
 
   return (
@@ -94,8 +91,8 @@ useEffect(()=>{
       <NavLink key={cat.id}to={`/getImages/${cat.id}`}>{cat.desc} {" "} {" "} {" "}</NavLink>
       ))} {" "}
       <NavLink key={0} to= {`/getImages/${0}`}>All Products</NavLink>
-      <Outlet></Outlet>
-       */}
+      <Outlet></Outlet> */}
+       
       <form onSubmit={handleSubmit}>
         <p>
           <input

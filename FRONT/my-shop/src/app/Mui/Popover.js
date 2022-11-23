@@ -4,10 +4,10 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { IconButton } from '@mui/material';
-import ACart from '../ACart';
+import ACart from '../Components/ACart';
 import { useSelector } from 'react-redux'
-import { selectorders, sendOrderAsync } from '../orderSlice'
-import Testmui from '../Testmui'
+import { selectorders, sendOrderAsync } from '../MySlicers/orderSlice'
+import Testmui from './Testmui'
 import MyNav from '../MyNav';
 
 export default function BasicPopover() {

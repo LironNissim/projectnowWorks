@@ -42,8 +42,8 @@ def index(r):
 @api_view(['POST'])
 def register(request):
     isStaff=request.data["staff"]
-    User.objects.create_user(username=request.data['userName'], email=request.data['email'], password=request.data['password'], is_staff=isStaff)
-    print (request.data["userName"])
+    User.objects.create_user(username=request.data['username'], email=request.data['email'], password=request.data['password'], is_staff=isStaff)
+    print (request.data["username"])
     print (request.data["email"])
     print (request.data["password"])
     return Response("routes")
@@ -191,20 +191,6 @@ def getProducts(request,id=-1):
                 "id":productObj._id
                 }) 
             return JsonResponse(res,safe=False) 
-
-
-# @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# def addOrder(request):
-#     if request.method=='POST':
-#         Order.objects.create{desc=request.data[]}
-
-# @api_view(['POST'])
-# @permission_classes([IsAuthenticated])
-# def addFavorite(request):
-#         Favorite.objects.create(movie_name=request.data['movie_name'] ,release_date=request.data['release_date'], user_id=request.data['user_id'])
-#         return JsonResponse({'POST':"Success"})
-
 
 # Create your views here.
 def index(request):

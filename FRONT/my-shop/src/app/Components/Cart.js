@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {selectCart, getCartAsync} from './cartSlice';
+import {selectCart, getCartAsync} from '../cartSlice';
 
 
 
@@ -30,4 +30,4 @@ const Cart = () => {
 
 } 
 
-export default Cart;
+// export default Cart;

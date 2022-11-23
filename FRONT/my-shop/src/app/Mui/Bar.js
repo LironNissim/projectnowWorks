@@ -12,10 +12,33 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import MyNav from '../MyNav';
+import {Link} from 'react-router-dom';
+import PetsSharpIcon from '@mui/icons-material/PetsSharp';
+import { createTheme } from '@mui/material/styles';
+import { purple } from '@mui/material/colors';
+import Popover from './Popover'
+import ModalSignin from './ModalSigin'
 
+const SignMeIn=<ModalSignin></ModalSignin>
 
-const pages = ['Products', 'Pricing', 'Blog'];
+const Admin=(
+  <Link style={{textDecoration:"none", color: "white"}} to="/getImages">
+    Admin
+  </Link>
+);
+const Products=(
+  <Link style={{textDecoration:"none", color: "white"}} to="/products">
+    Products
+  </Link>
+);
+
+const MyOrders=(
+  <Link style={{textDecoration:"none", color: "white"}} to="/orders">
+    My Orders
+  </Link>
+);
+
+const pages = [Admin,Products,MyOrders,SignMeIn];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -38,10 +61,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="static">
-      <Container maxWidth="xl">
+    <AppBar className="MyBarr" position="static">
+      <Container maxWidth="xl" >
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <PetsSharpIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -56,10 +79,7 @@ function ResponsiveAppBar() {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-            <MyNav></MyNav>
-          </Typography>
-
+          ></Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -97,6 +117,7 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Popover></Popover>
           <Typography
             variant="h5"
             noWrap
@@ -112,8 +133,7 @@ function ResponsiveAppBar() {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-            LOGO<MyNav></MyNav>
+          >LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -154,6 +174,7 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
+              
             </Menu>
           </Box>
         </Toolbar>

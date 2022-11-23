@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { signin, signup } from './loginAPI';
+import { signin, signup } from '../MyAPI/loginAPI';
 import jwt_decode from "jwt-decode";
 
 const initialState = {
@@ -52,17 +52,17 @@ export const loginSlice = createSlice({
         }
       })
         
-      .addCase(dosignupAsync.fulfilled,(state,action) => {
-        console.log(action.payload.access)
-        if(action.payload.access){
-          state.token=action.payload.access
-          state.logged=true
-          state.userName=jwt_decode(action.payload.access).username
-          state.password=jwt_decode(action.payload.access).password
-          state.email=jwt_decode(action.payload.access).eeemail
-          state.is_staff=jwt_decode(action.payload.access).staff
-        }
-      })
+      // .addCase(dosignupAsync.fulfilled,(state,action) => {
+      //   console.log(action.payload.access)
+      //   if(action.payload.access){
+      //     state.token=action.payload.access
+      //     state.logged=true
+      //     state.userName=jwt_decode(action.payload.access).username
+      //     state.password=jwt_decode(action.payload.access).password
+      //     state.email=jwt_decode(action.payload.access).eeemail
+      //     state.is_staff=jwt_decode(action.payload.access).staff
+      //   }
+      // })
   }
 })
     

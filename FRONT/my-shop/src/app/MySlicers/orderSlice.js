@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import {sendOrders} from './orderAPI';
+import {sendOrders} from '../MyAPI/orderAPI';
 
 const initialState = {
   myorders: [],

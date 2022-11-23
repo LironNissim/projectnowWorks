@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { getCart, buyProduct,removeProduct } from './cartAPI';
+import { getCart, buyProduct,removeProduct } from '../MyAPI/cartAPI';
 
 const initialState = {
   orders: [],
