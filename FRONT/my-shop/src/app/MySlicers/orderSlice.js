@@ -3,6 +3,7 @@ import {sendOrders} from '../MyAPI/orderAPI';
 
 const initialState = {
   myorders: [],
+  totalPrice:0,
   status: "idle"
 };
 export const sendOrderAsync = createAsyncThunk(
@@ -18,7 +19,12 @@ export const orderSlice = createSlice({
     reducers: {
       sendCart: (state,action) => {
         state.myorders=action.payload
-        console.log(state.myorders)
+        let myCalc=0
+        action.payload.forEach(prod => {
+        myCalc += prod.amount*prod.price  
+        });
+        state.totalPrice=myCalc
+        console.log("state.totalPrice", state.totalPrice)
       },
       clearAr: (state) => {
         state.myorders=[]
@@ -37,4 +43,5 @@ export const orderSlice = createSlice({
 
 export const { sendCart, clearAr } = orderSlice.actions;
 export const selectorders=(state)=>state.order.myorders;
+export const selecttotalPrice=(state)=>state.order.totalPrice;
 export default orderSlice.reducer;

@@ -22,7 +22,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 export default function CustomizedBadges() {
   const myorders = useSelector(selectorders);
   return (
-    <IconButton aria-label="cart" color='white'>
+    <IconButton sx={{color:"white"}} aria-label="cart" fontSize="large">
       <StyledBadge badgeContent={myorders && myorders.length} color="secondary">
         <ShoppingCartIcon />
       </StyledBadge>

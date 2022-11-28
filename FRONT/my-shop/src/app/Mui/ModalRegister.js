@@ -40,7 +40,7 @@ export default function BasicModal() {
             <PetsOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5" textAlign={"center"}>
-            Sign in
+            SIGN UP
           </Typography>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <Login></Login>

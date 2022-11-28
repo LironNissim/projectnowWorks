@@ -12,33 +12,48 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PetsSharpIcon from '@mui/icons-material/PetsSharp';
 import { createTheme } from '@mui/material/styles';
 import { purple } from '@mui/material/colors';
 import Popover from './Popover'
 import ModalSignin from './ModalSigin'
+import NestedMod from './NestedMod'
 
-const SignMeIn=<ModalSignin></ModalSignin>
 
-const Admin=(
-  <Link style={{textDecoration:"none", color: "white"}} to="/getImages">
+
+const SignReg = <NestedMod></NestedMod>
+
+
+const Admin = (
+  <Link style={{ textDecoration: "none", color: "white" }} to="/getImages">
     Admin
   </Link>
 );
-const Products=(
-  <Link style={{textDecoration:"none", color: "white"}} to="/products">
+const Products = (
+  <Link style={{ textDecoration: "none", color: "white" }} to="/products">
     Products
   </Link>
 );
 
-const MyOrders=(
-  <Link style={{textDecoration:"none", color: "white"}} to="/orders">
-    My Orders
+// const MyOrders = (
+//   <Link style={{ textDecoration: "none", color: "white" }} to="/orders">
+//     My Orders
+//   </Link>
+// );
+// const MyHome = (
+//   <Link style={{ textDecoration: "none", color: "white" }} to="/home">
+//     Home
+//   </Link>
+// );
+const AboutUs = (
+  <Link style={{ textDecoration: "none", color: "white" }} to="/about">
+    About
   </Link>
 );
 
-const pages = [Admin,Products,MyOrders,SignMeIn];
+
+const pages = [Admin, AboutUs, Products, SignReg];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
@@ -61,25 +76,26 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar className="MyBarr" position="static">
+    <AppBar sx={{ bgcolor: "black" }} className="MyBarr" position="static">
       <Container maxWidth="xl" >
         <Toolbar disableGutters>
-          <PetsSharpIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          ></Typography>
+          <Link style={{color: 'white', textDecoration: 'none'}} to='/'><PetsSharpIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { xs: 'none', md: 'flex' },
+                fontFamily: 'monospace',
+                fontWeight: 700,
+                letterSpacing: '.3rem',
+                color: 'inherit',
+                textDecoration: 'none',
+              }}
+            ></Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -117,7 +133,6 @@ function ResponsiveAppBar() {
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-          <Popover></Popover>
           <Typography
             variant="h5"
             noWrap
@@ -127,7 +142,7 @@ function ResponsiveAppBar() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: 'Lexend Peta',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
@@ -146,13 +161,14 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-
+          <Popover></Popover>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
               </IconButton>
             </Tooltip>
+
             <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
@@ -174,7 +190,7 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}
-              
+
             </Menu>
           </Box>
         </Toolbar>

@@ -84,6 +84,7 @@ useEffect(()=>{
   return (
     
     <div>
+      
       <h2>Admin</h2>
       Items in my shop:{" "}{products.length}<br/>
       {/* Categories: <br/>
@@ -133,7 +134,7 @@ useEffect(()=>{
           ></input>
         </p>
 
-        <button type="submit">Add</button>
+        <button type="submit">ADD</button>
       </form><br/>
 
     {products.length > 0 && products.map((prod, i) => <div key={i}>
@@ -164,11 +165,11 @@ useEffect(()=>{
           <Typography fontSize="lg" fontWeight="lg">
           </Typography>
         </div>
-          <IconButton onClick={()=> dispatch(updProdAsync({desc:desc, price:price, id:prod.id, token:token}))} size="small" color= "secondary" variant="outlined" aria-label="update">
+          {/* <IconButton className="MyNiceButton" onClick={()=> dispatch(updProdAsync({desc:desc, price:price, id:prod.id, token:token}))} size="small" color= "secondary" variant="outlined" aria-label="update">
             Update<PetsIcon/>
-          </IconButton>
-          <IconButton onClick={()=>dispatch(removeProdAsync({id:prod.id, token:token}))} size="small" color="secondary" variant="outlined" aria-label="delete">
-            Remove<DeleteIcon/>
+          </IconButton> */}
+          <IconButton className="MyNiceButton" onClick={()=>dispatch(removeProdAsync({id:prod.id, token:token}))} size="small" color="secondary" variant="outlined" aria-label="delete">
+            REMOVE<DeleteIcon/>
           </IconButton>
         </Box>
    </Card>    

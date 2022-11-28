@@ -8,11 +8,11 @@ const initialState = {
   status:'idle',
   token:"",
   logged: false,
-  is_staff:false
+  staff:false,
   
 };
 export const dosignupAsync = createAsyncThunk(
-  'login/signup',
+  'register/signup',
   async (action) => {
     const response = await signup(action);
     return response.data;

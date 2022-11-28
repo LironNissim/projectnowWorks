@@ -15,7 +15,7 @@ import Card from '@mui/joy/Card';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Favorite from '@mui/icons-material/Favorite';
-import { color } from '@mui/system';
+import CustomizedSnackbars from '../Mui/AddAlert';
 
 const Products = () => {
   let params = useParams();
@@ -72,18 +72,18 @@ const Products = () => {
   };
 
   return (
-    <div>
-      {/* <h4>{userName && <div>Hello{userName}</div>}</h4>  */}
-      <div style={{textAlign:"center"}} >
-          <h3 >NEW HOLIDAY COLLECTION</h3>
-          <h5>By the Italian Designer Paw-la Perro</h5>
+    <div >
+      <h3 style={{fontFamily:"sans-serif",textAlign:"center"}}class="animate__animated animate__tada">NEW HOLIDAY COLLECTION</h3>
+      <h3 style={{fontFamily:"sans-serif",textAlign:"center"}}class="animate__animated animate__tada">By the Italian Designer Paw-la Perro</h3>
+      <div  >
+          
       </div>
       
-      <IconButton onClick={() => setmyCart([])} size="small">Clear Cart<RemoveShoppingCartIcon />
+      <IconButton className="MyNiceButton" onClick={() => setmyCart([])} size="small">CLEAR CART<RemoveShoppingCartIcon />
       </IconButton>
       {/* <IconButton onClick={() => console.table(myCart)} size="small">Show Cart<ShoppingCartIcon/>
       </IconButton> */}
-      <IconButton onClick={() => dispatch(sendCart(myCart))} size="small">Send Order<ShoppingCartCheckoutIcon />
+      <IconButton className="MyNiceButton" onClick={() => dispatch(sendCart(myCart))} size="small" >SEND ORDER<ShoppingCartCheckoutIcon />
       </IconButton>
      
       {/* <button onClick={()=>dispatch(clearAr())}>Test</button> */}
@@ -117,8 +117,9 @@ const Products = () => {
               <Typography fontSize="lg" fontWeight="lg">
               </Typography>
             </div>
-            <IconButton onClick={() => dispatch(addToCart({ _id: prod.id, desc: prod.desc, content: prod.content, amount: 1, price: prod.price }))} size="small" variant="contained" aria-label="add to shopping cart">
-              <AddShoppingCartIcon /> Add to Cart
+            <IconButton className="MyNiceButton" onClick={() => dispatch(addToCart({ _id: prod.id, desc: prod.desc, content: prod.content, amount: 1, price: prod.price }))} 
+            size="small" aria-label="add to shopping cart">
+              <CustomizedSnackbars>Add to Cart<AddShoppingCartIcon /></CustomizedSnackbars>
             </IconButton>
           </Box>
         </Card>
