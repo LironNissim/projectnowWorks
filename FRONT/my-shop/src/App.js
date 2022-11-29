@@ -31,7 +31,7 @@ function App() {
         src={logotwo} width= "15%" alt="not found"/> 
       <Bar></Bar>      
       <nav>
-      <h4 class="animate__animated animate__bounceInRight">{userName && <div>Hello, {userName}</div>}</h4>
+      <h4 className="animate__animated animate__bounceInRight">{userName && <div>Hello, {userName}</div>}</h4>
       </nav>
       <ModalSignin></ModalSignin>
       <ModalRegister></ModalRegister>

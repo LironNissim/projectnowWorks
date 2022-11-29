@@ -13,7 +13,7 @@ export default function BasicCard() {
       <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
         Product name
       </Typography>
-      <Typography level="body2">description</Typography>
+      <Typography style={{textAlign: 'center'}} level="body2">description</Typography>
       <IconButton
         aria-label="Like minimal photography"
         variant="solid"

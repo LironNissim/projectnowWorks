@@ -39,10 +39,10 @@ export default function BasicModal() {
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
             <PetsOutlinedIcon />
           </Avatar>
-          <Typography component="h1" variant="h5" textAlign={"center"}>
+          <Typography style={{textAlign: 'center'}} component="h1" variant="h5">
             SIGN UP
           </Typography>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
+          <Typography style={{textAlign: 'center'}} id="modal-modal-title" variant="h6" component="h2">
             <Login></Login>
             <Typography component="h1" variant="h5">
             </Typography>

@@ -26,7 +26,7 @@ const Login = () => {
       <input onChange={(e) => setNewPwd(e.target.value)} className="MyFormMui" placeholder="Enter Password" type='password'></input><br/>
       {/* Login */}
       <button onClick={() => dispatch(dosigninAsync({ username: newUserName, password: newPwd, staff:staff }))} className="MyNiceButton">
-        Sign in</button>
+        Sign in</button>{" "}{" "}
       {/* Logout */}
       <button onClick={() => dispatch(logout({ id: 3, "name": "lironn" }))} className="MyNiceButton">
         Log Out</button>

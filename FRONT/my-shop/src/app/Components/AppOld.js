@@ -139,10 +139,10 @@ useEffect(()=>{
 
     {products.length > 0 && products.map((prod, i) => <div key={i}>
     <Card className='MyCard' variant="outlined" sx={{width: 300 }}>
-      <Typography level="h2" fontSize="md" sx={{ mb: 0.5 }}>
+      <Typography style={{textAlign: 'center'}} level="h2" fontSize="md" sx={{ mb: 0.5 }}>
         <h3>{prod.desc}</h3>
       </Typography>
-      <Typography level="body2"><h5>{prod.content}</h5></Typography>
+      <Typography style={{textAlign: 'center'}} level="body2"><h5>{prod.content}</h5></Typography>
       <IconButton
         aria-label="Like minimal photography"
         variant="solid"

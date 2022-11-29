@@ -8,12 +8,12 @@ import fashinista from '../Photos/fashinista.jpg'
 const About = () => {
   return (
     <div >
-<div class="animate__animated animate__slideInLeft"><img
+<div className="animate__animated animate__slideInLeft"><img
         src={fashinista} align="left" alt="not found" /></div>
       
 
       <Typography>
-        <h4 className="animate__animated animate__slideInRight"><br />
+        <h4 style={{textAlign: 'center'}} className="animate__animated animate__slideInRight"><br />
           <h3>Hello, and welcome to DRESS CODE<br />
           <br />The most glamorouse fashion boutique for your dog!</h3>
           <br />If you are here, you are probably a dog lover and a fashionist,<br />

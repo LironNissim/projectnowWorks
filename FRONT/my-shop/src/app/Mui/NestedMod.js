@@ -45,12 +45,12 @@ function ChildModal() {
         aria-labelledby="child-modal-title"
         aria-describedby="child-modal-description"
       >
-        <Box sx={{ ...style, width: 200}}>
+        <Box style={{textAlign: 'center'}} sx={{ ...style, width: 200}}>
         <Button onClick={handleClose}>X</Button>
           <Avatar sx={{ m: 1, bgcolor: '#9656A1' }}>
             <PetsOutlinedIcon />
           </Avatar>
-          <h2 id="child-modal-title">SIGN UP</h2>
+          <h2 style={{textAlign: 'center'}} id="child-modal-title">SIGN UP</h2>
           <p id="child-modal-description">
             <Register></Register>
           </p>
@@ -78,12 +78,12 @@ export default function NestedModal() {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box sx={{ ...style, width: 400 }}>
+        <Box style={{textAlign: 'center'}} sx={{ ...style, width: 400 }}>
         <Button onClick={handleClose}>X</Button>
           <Avatar sx={{ m: 1, bgcolor: '#B980F0' }}>
             <PetsOutlinedIcon />
           </Avatar>
-          <h2 id="parent-modal-title">SIGN IN</h2>
+          <h2 style={{textAlign: 'center'}} id="parent-modal-title">SIGN IN</h2>
           <p id="parent-modal-description">
             Don't have an account?
           </p>
