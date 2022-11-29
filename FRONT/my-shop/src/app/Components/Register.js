@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MyCheckbox from '../Mui/MyCheckbox'
 import Checkbox from '@mui/material/Checkbox';
+import PositionedSnackbar from '../Mui/PositionAlert';
 
 
 
@@ -32,7 +33,7 @@ const Register = () => {
       <input onChange={(e) => setNewPwd(e.target.value)} className="MyFormMui" placeholder="Enter Password" type='password'></input><br/>
       <input onChange={(e) => setNewEmail(e.target.value)}className="MyFormMui" placeholder="Enter Email"></input><br/>
       <button onClick={() => dispatch(dosignupAsync({ username: newUserName, password: newPwd, email: newEmail, staff:staff }))}className="MyNiceButton">
-        Sign Up</button>
+      <PositionedSnackbar>SIGN UP</PositionedSnackbar></button>
       
     </div>
   )
