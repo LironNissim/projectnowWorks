@@ -14,11 +14,8 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { Link } from 'react-router-dom';
 import PetsSharpIcon from '@mui/icons-material/PetsSharp';
-import { createTheme } from '@mui/material/styles';
-import { purple } from '@mui/material/colors';
-import Popover from './Popover'
-import ModalSignin from './ModalSigin'
-import NestedMod from './NestedMod'
+import Popover from './Popover';
+import NestedMod from './NestedMod';
 
 
 
@@ -36,16 +33,6 @@ const Products = (
   </Link>
 );
 
-// const MyOrders = (
-//   <Link style={{ textDecoration: "none", color: "white" }} to="/orders">
-//     My Orders
-//   </Link>
-// );
-// const MyHome = (
-//   <Link style={{ textDecoration: "none", color: "white" }} to="/home">
-//     Home
-//   </Link>
-// );
 const AboutUs = (
   <Link style={{ textDecoration: "none", color: "white" }} to="/about">
     About

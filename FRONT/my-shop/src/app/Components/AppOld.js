@@ -30,7 +30,6 @@ const AppOld = () => {
 useEffect(()=>{
   dispatch(getProdAsync(products))
 },[products.length])
-// console.log("products", products)
 
   useEffect(() => {
     axios(IMAGES_URL).then((result) => setImages(result.data));
@@ -38,10 +37,6 @@ useEffect(()=>{
     console.log(products.length);
   }, [call]);
 
-  // let categories=[{id:1, desc:'Winter Collection | '},{id:2, desc:'Summer Collection | '},{id:3, desc:'Just Landed | '},{id:4, desc:'Sale | '} ]
-  // useEffect(() => {
-  //   dispatch(getcatAsync())
-  // }, [])
 
   const handleDesc = (e) => {
     e.preventDefault();
@@ -65,7 +60,6 @@ useEffect(()=>{
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(desc, content, image);
 
     let form_data = new FormData();
     form_data.append("image", image, image.name);
@@ -87,12 +81,6 @@ useEffect(()=>{
       
       <h2>Admin</h2>
       Items in my shop:{" "}{products.length}<br/>
-      {/* Categories: <br/>
-      {categories.map((cat)=> (
-      <NavLink key={cat.id}to={`/getImages/${cat.id}`}>{cat.desc} {" "} {" "} {" "}</NavLink>
-      ))} {" "}
-      <NavLink key={0} to= {`/getImages/${0}`}>All Products</NavLink>
-      <Outlet></Outlet> */}
        
       <form onSubmit={handleSubmit}>
         <p>

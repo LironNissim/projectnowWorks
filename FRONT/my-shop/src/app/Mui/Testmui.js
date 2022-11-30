@@ -4,8 +4,8 @@ import Badge from '@mui/material/Badge';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { useSelector, useDispatch } from 'react-redux'
-import { selectorders, sendOrderAsync } from '../MySlicers/orderSlice'
+import { useSelector} from 'react-redux'
+import { selectorders} from '../MySlicers/orderSlice'
 
 
 

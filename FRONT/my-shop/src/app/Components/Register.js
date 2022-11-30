@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { dosigninAsync, dosignupAsync, selectEmail, selectUserName, logout, selectToken } from '../MySlicers/loginSlice';
-import Button from '@mui/material/Button';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import MyCheckbox from '../Mui/MyCheckbox'
+import { dosignupAsync, selectEmail, selectUserName, selectToken } from '../MySlicers/loginSlice';
 import Checkbox from '@mui/material/Checkbox';
 import PositionedSnackbar from '../Mui/PositionAlert';
 

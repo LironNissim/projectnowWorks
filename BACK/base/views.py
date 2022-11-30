@@ -18,7 +18,6 @@ from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.decorators import api_view
 
-# Create your views here.
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
@@ -29,7 +28,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['username'] = user.username
         token['eeemail']= user.email
         token['staff']= user.is_staff
-        # ...
+
         return token
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -60,9 +59,6 @@ def logout(request):
 def products(request,id=-1):
     if request.method == 'POST': #method post add new row
         print(request.data['desc'])
-        # print(request.data['price'])
-        # print(request.data['cat_id'])
-        # desc =request.data['desc']
         Product.objects.create(desc=request.data['desc'] ,price=request.data['price'])
         return JsonResponse({'POST':"Success"})
 
@@ -149,15 +145,6 @@ def getCategories(request):
     Categories=Category.objects.all()
     serializer=CategorySerializer(Categories,many=True)
     return Response(serializer.data)
-
-# @api_view(['GET'])
-# def getProducts(request, id=0):
-#     if int(id)> 0:
-#         products=Product.objects.filter(cat_id=int(id))
-#     else:
-#         products=Product.objects.all() 
-#     serializer=ProductSerializer(products,many=True)
-#     return Response(serializer.data)
 
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])

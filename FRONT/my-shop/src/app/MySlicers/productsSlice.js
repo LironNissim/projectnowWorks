@@ -41,17 +41,6 @@ export const productsSlice = createSlice({
   name: 'products',
   initialState,
    reducers: {
-    // add: (state,action) => {
-    //   console.log(action)
-    //   state.productslst.push(action.payload);
-    // },
-  //   remove: (state) => {
-  //     state.value -= 1;
-  //   },
-    
-  //   update: (state, action) => {
-  //     state.value += action.payload;
-  //   },
   },
 
   extraReducers: (builder) => {

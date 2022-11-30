@@ -2,8 +2,6 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
 import Register from '../Components/Register';
 import Login from '../Components/Login';
 import PetsOutlinedIcon from '@mui/icons-material/PetsOutlined';

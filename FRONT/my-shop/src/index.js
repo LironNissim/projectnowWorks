@@ -29,10 +29,6 @@ root.render(
             <Route path="/posts" element={<AppOld />} />
             <Route path="/cart" element= {<ACart/>} />
             <Route path="/addOrder" element={<ACart/>} />
-            {/* <Route path="/category" element={<Category />} />
-            <Route path="/categories" element={<MyCats />} >
-              <Route path=":id" element={<Products />} /> */}
-            {/* </Route> */}
           </Route>
         </Routes>
 
