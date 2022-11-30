@@ -41,7 +41,7 @@ const Products = () => {
 
   // runs when we change the length of the cart
   useEffect(() => {
-    console.table(myCart)
+    console.log(myCart)
     localStorage.setItem("myCart", JSON.stringify(myCart))
   }, [myCart.length, amountCng])
 

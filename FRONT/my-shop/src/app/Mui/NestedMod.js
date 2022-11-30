@@ -12,7 +12,7 @@ import Avatar from '@mui/material/Avatar';
 
 
 const style = {
-  className:'parent',
+  className: 'parent',
   position: 'absolute',
   top: '50%',
   left: '50%',
@@ -38,19 +38,21 @@ function ChildModal() {
   return (
     <React.Fragment>
       <Button onClick={handleOpen}>sign up here!</Button>
-      <Modal 
+      <Modal
         hideBackdrop
         open={open}
         onClose={handleClose}
         aria-labelledby="child-modal-title"
         aria-describedby="child-modal-description"
       >
-        <Box style={{textAlign: 'center'}} sx={{ ...style, width: 200}}>
-        <Button onClick={handleClose}>X</Button>
-          <Avatar sx={{ m: 1, bgcolor: '#9656A1' }}>
-            <PetsOutlinedIcon />
-          </Avatar>
-          <h2 style={{textAlign: 'center'}} id="child-modal-title">SIGN UP</h2>
+        <Box style={{ textAlign: 'center' }} sx={{ ...style, width: 200 }}>
+          <Button sx={{ marginLeft: 20.3 }} onClick={handleClose}>X</Button>
+          <div>
+            <Avatar sx={{ m: 1, bgcolor: '#9656A1'}}>
+              <PetsOutlinedIcon/>
+            </Avatar>
+          </div>
+          <h2 style={{ textAlign: 'center' }} id="child-modal-title">SIGN UP</h2>
           <p id="child-modal-description">
             <Register></Register>
           </p>
@@ -78,12 +80,12 @@ export default function NestedModal() {
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
       >
-        <Box style={{textAlign: 'center'}} sx={{ ...style, width: 400 }}>
-        <Button onClick={handleClose}>X</Button>
+        <Box style={{ textAlign: 'center' }} sx={{ ...style, width: 400 }}>
+          <Button sx={{ marginLeft: 44.3 }} onClick={handleClose}>X</Button>
           <Avatar sx={{ m: 1, bgcolor: '#B980F0' }}>
-            <PetsOutlinedIcon />
+            <PetsOutlinedIcon style={{ align: "center" }} />
           </Avatar>
-          <h2 style={{textAlign: 'center'}} id="parent-modal-title">SIGN IN</h2>
+          <h2 style={{ textAlign: 'center' }} id="parent-modal-title">SIGN IN</h2>
           <p id="parent-modal-description">
             Don't have an account?
           </p>
