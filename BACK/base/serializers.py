@@ -3,6 +3,8 @@ from unicodedata import category
 from rest_framework.serializers import ModelSerializer
 from .models import Category, Product
 from .models import Note,Pita
+from rest_framework import serializers
+
 
 
 class NoteSerializer(ModelSerializer):
@@ -16,7 +18,7 @@ class PitaSerializer(ModelSerializer):
         model= Pita
         fields='__all__'
 
-class ProductSerializer(ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model= Product
         fields='__all__'
@@ -26,6 +28,8 @@ class CategorySerializer(ModelSerializer):
     class Meta:
         model= Category
         fields='__all__'
+
+   
 
  
     

@@ -81,7 +81,7 @@ export default function NestedModal() {
         <Box style={{ textAlign: 'center' }} sx={{ ...style, width: 400 }}>
           <Button sx={{ marginLeft: 44.3 }} onClick={handleClose}>X</Button>
           <Avatar sx={{ m: 1, bgcolor: '#B980F0' }}>
-            <PetsOutlinedIcon style={{ align: "center" }} />
+            <PetsOutlinedIcon/>
           </Avatar>
           <h2 style={{ textAlign: 'center' }} id="parent-modal-title">SIGN IN</h2>
           <p id="parent-modal-description">

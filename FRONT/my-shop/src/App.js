@@ -19,7 +19,7 @@ function App() {
         src={logotwo} width= "15%" alt="not found"/> 
       <Bar></Bar>      
       <nav>
-      <h4 className="animate__animated animate__bounceInRight">{userName && <div>Hello, {userName}</div>}</h4>
+      <div className='cardDesign'><h4 className="animate__animated animate__bounceInRight">{userName && <div>Hello, {userName}</div>}</h4></div>
       </nav>
       <Outlet></Outlet>
     </div>

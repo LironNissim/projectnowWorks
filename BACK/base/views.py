@@ -28,7 +28,7 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token['username'] = user.username
         token['eeemail']= user.email
         token['staff']= user.is_staff
-
+        # ...
         return token
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -146,6 +146,8 @@ def getCategories(request):
     serializer=CategorySerializer(Categories,many=True)
     return Response(serializer.data)
 
+
+
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
 def addOrder(request):
@@ -199,6 +201,7 @@ def getImages(request):
 # save image from user to DB
 class APIViews(APIView):
     parser_class = (MultiPartParser, FormParser)
+    @permission_classes([IsAdminUser])
     def post(self, request, *args, **kwargs):
         api_serializer = ProductSerializer(data=request.data)
         if api_serializer.is_valid():  # the serializer check our data

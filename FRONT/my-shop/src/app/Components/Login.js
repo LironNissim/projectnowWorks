@@ -22,8 +22,8 @@ const Login = () => {
       {email && <div>Email: {email}</div>}
 
       Staff:<Checkbox defaultChecked color="secondary"onChange={(e) => setStaff(e.target.checked)} type={"checkbox"}/><br></br>      
-      <input onChange={(e) => setnewUserName(e.target.value)} className="MyFormMui" placeholder="Enter Name"></input><br/>
-      <input onChange={(e) => setNewPwd(e.target.value)} className="MyFormMui" placeholder="Enter Password" type='password'></input><br/>
+      <div className='Buttonlogin'><input onChange={(e) => setnewUserName(e.target.value)} className="MyFormMui" placeholder="Enter Name"></input></div><br/>
+      <div className='Buttonlogin'><input onChange={(e) => setNewPwd(e.target.value)} className="MyFormMui" placeholder="Enter Password" type='password'></input></div><br/>
       {/* Login */}
       <button onClick={() => dispatch(dosigninAsync({ username: newUserName, password: newPwd, staff:staff }))} className="MyNiceButton">
         SIGN IN</button>{" "}{" "}
@@ -40,24 +40,4 @@ export default Login;
 
 
 
-      // <TextField
-      //     required
-      //     id="filled-required"
-      //     label="Name"
-      //     defaultValue=""
-      //     variant="filled"
-      //   />
-      //   <TextField
-      //     id="filled-password-input"
-      //     label="Password"
-      //     type="password"
-      //     autoComplete="current-password"
-      //     variant="filled"
-      //   />
-      //   <TextField
-      //     id="filled-email-input"
-      //     label="Email"
-      //     type="email"
-      //     autoComplete="current-password"
-      //     variant="filled"
-      //   />
+    

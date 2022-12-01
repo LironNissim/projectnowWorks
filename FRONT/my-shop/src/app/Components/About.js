@@ -6,7 +6,7 @@ import fashinista from '../Photos/fashinista.jpg'
 
 const About = () => {
   return (
-    <div >
+    <div className='cardDesign'>
 <div className="animate__animated animate__slideInLeft"><img
         src={fashinista} align="left" alt="not found" /></div>
       

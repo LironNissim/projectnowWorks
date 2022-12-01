@@ -24,7 +24,7 @@ export default function BasicModal() {
 
   return (
     <div>
-      <Button className="MyNiceButton" onClick={handleOpen}>Make Order</Button>
+      <div className='ButtonCenter'><Button className="MyNiceButton" onClick={handleOpen}>Make Order</Button></div>
       <Modal
         open={open}
         onClose={handleClose}

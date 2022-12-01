@@ -12,7 +12,6 @@ export function getProducts() {
   );
 };
 
-
 export function addProducts(token,form_data) {
   return new Promise((resolve) =>
     axios.post(API_URL, form_data,
@@ -24,7 +23,6 @@ export function addProducts(token,form_data) {
         console.log(res.data);
       })
       .catch((err) => console.log(err)))
-
 };
 export function updProducts(newProd,id) {
   return new Promise((resolve) =>
